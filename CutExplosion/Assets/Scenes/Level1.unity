@@ -2411,7 +2411,7 @@ MonoBehaviour:
   Speed: 5
   JumpForce: 15
   DownForce: 10
-  DashForce: 8
+  DashForce: 10
   StartDashTimer: 2
   life: 5
   anim: {fileID: 105917531}

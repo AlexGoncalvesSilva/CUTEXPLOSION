@@ -16,7 +16,6 @@ public class PlayerBasic : MonoBehaviour
     private bool canDash;
     private bool isDead;
     private bool isJumping;
-    private bool isDashing;
 
 
     private Rigidbody2D rig;
@@ -29,7 +28,6 @@ public class PlayerBasic : MonoBehaviour
         isGround = true;
         canDash = true;
         isDead = false;
-        isDashing = false;
         life = 5;
     }
 
@@ -76,7 +74,14 @@ public class PlayerBasic : MonoBehaviour
             rig.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
             anim.SetInteger("Transition", 1);
             isGround = false;
+            StartCoroutine("RotinaJump");
         }
+    }
+
+    IEnumerator RotinaJump()
+    {
+        yield return new WaitForSeconds(1f);
+        anim.SetInteger("Transition", 0);
     }
 
     public void Down()
@@ -90,10 +95,9 @@ public class PlayerBasic : MonoBehaviour
         if (canDash == true)
         {
             rig.AddForce(Vector2.right * DashForce, ForceMode2D.Impulse);
-            anim.SetBool("IsDash", true);
+            anim.SetBool("isDashing", true);
             canDash = false;
             CurrentDashTimer = StartDashTimer;
-            isDashing = true;
             StartCoroutine("Rotina");
         }
     }
@@ -101,7 +105,7 @@ public class PlayerBasic : MonoBehaviour
     IEnumerator Rotina()
     {
         yield return new WaitForSeconds(0.2f);
-        anim.SetBool("IsDash", false);
+        anim.SetBool("isDashing", false);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
