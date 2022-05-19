@@ -58,6 +58,11 @@ public class GameController : MonoBehaviour
         Time.timeScale = 0;
     }
 
+    public void MenuButton()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     IEnumerator Rotina()
     {
         yield return new WaitForSeconds(1f);
