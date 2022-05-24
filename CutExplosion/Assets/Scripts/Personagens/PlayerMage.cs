@@ -7,14 +7,17 @@ public class PlayerMage : MonoBehaviour
 
     [SerializeField] private float Speed;
     [SerializeField] private float flyForce;
+    [SerializeField] private int life;
 
     Rigidbody2D rig;
+
+    public Animator anim;
 
     void Start()
     {
 
         rig = GetComponent<Rigidbody2D>();
-
+        life = 5;
     }
     void Update()
     {
@@ -32,6 +35,11 @@ public class PlayerMage : MonoBehaviour
             //Vector3 fly = new Vector3(0f, 1f, 0f);
             //transform.position += fly * flyForce * Time.deltaTime;
             Debug.Log("clicou");
+            anim.SetInteger("Transition", 1);
+        }
+        else
+        {
+            anim.SetInteger("Transition", 0);
         }
     }
 
@@ -40,6 +48,10 @@ public class PlayerMage : MonoBehaviour
         if (collision.gameObject.layer == 8)
         {
             GameController.instance.LostLife();
+            if (life <= 0)
+            {
+                anim.SetInteger("Transition", 2);
+            }
         }
     }
 }
