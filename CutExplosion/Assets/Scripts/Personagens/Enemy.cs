@@ -14,7 +14,8 @@ public class Enemy : MonoBehaviour
 
     public Transform Point;
     public GameObject StartPos;
-    public LayerMask PlayerLayer;
+    public LayerMask PlayerBasicLayer;
+    public LayerMask PlayerMageLayer;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,8 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SeePlayer();
+        SeePlayerBasic();
+        SeePlayerMage();
         if (playerIsClose == true) { Move(); }
     }
 
@@ -36,9 +38,27 @@ public class Enemy : MonoBehaviour
         transform.position += movement * Speed * Time.deltaTime;
     }
 
-    void SeePlayer()
+    void SeePlayerBasic()
     {
-        Collider2D hit = Physics2D.OverlapCircle(Point.position, Radius, PlayerLayer);
+        Collider2D hit = Physics2D.OverlapCircle(Point.position, Radius, PlayerBasicLayer);
+
+        if (hit != null)
+        {
+            playerIsClose = true;
+        }
+        if (hit == null)
+        {
+            playerIsClose = false;
+        }
+    }
+
+    void SeePlayerMage()
+    {
+        Collider2D hit = Physics2D.OverlapCircle(Point.position, Radius, PlayerMageLayer);
+
+
+        //andar para o mago
+
 
         if (hit != null)
         {
@@ -54,11 +74,26 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.layer == 6)
         {
-           if (GameController.instance.Life >= 1)
+            if (PlayerBasic.instance.canDie == true)
+            {
+                if (GameController.instance.Life >= 1)
+                {
+                    transform.position = new Vector3(StartPos.transform.position.x, StartPos.transform.position.y, 0f);
+                }
+            }
+            if (PlayerBasic.instance.canDie == false)
+            {
+                Destroy(this.gameObject, 0.08f);
+            }
+           
+        }
+
+        if (collision.gameObject.layer == 10)
+        {
+            if (GameController.instance.Life >= 1)
             {
                 transform.position = new Vector3(StartPos.transform.position.x, StartPos.transform.position.y, 0f);
             }
-                
         }
     }
 

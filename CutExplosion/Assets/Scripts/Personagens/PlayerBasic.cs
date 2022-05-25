@@ -16,18 +16,22 @@ public class PlayerBasic : MonoBehaviour
     private bool canDash;
     private bool isDead;
     private bool isJumping;
-
+    public bool canDie;
 
     private Rigidbody2D rig;
     public Animator anim;
 
+    public static PlayerBasic instance;
+
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         rig = GetComponent<Rigidbody2D>();
         isGround = true;
         canDash = true;
         isDead = false;
+        canDie = true;
         life = 5;
     }
 
@@ -98,7 +102,9 @@ public class PlayerBasic : MonoBehaviour
             anim.SetBool("isDashing", true);
             canDash = false;
             CurrentDashTimer = StartDashTimer;
+            canDie = false;
             StartCoroutine("Rotina");
+            StartCoroutine("RotinaCanDie");
         }
     }
 
@@ -106,6 +112,12 @@ public class PlayerBasic : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         anim.SetBool("isDashing", false);
+    }
+    
+    IEnumerator RotinaCanDie()
+    {
+        yield return new WaitForSeconds(1.1f);
+        canDie = true;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -117,13 +129,17 @@ public class PlayerBasic : MonoBehaviour
         }
         if (collision.gameObject.layer == 8)
         {
-            GameController.instance.LostLife();
-            life--;
-            if(life <= 0)
+            if (canDie == true)
             {
-                isDead = true;
-                anim.SetInteger("Transition", 2);
+                GameController.instance.LostLife();
+                life--;
+                if (life <= 0)
+                {
+                    isDead = true;
+                    anim.SetInteger("Transition", 2);
+                }
             }
+           
         }
     }
 
