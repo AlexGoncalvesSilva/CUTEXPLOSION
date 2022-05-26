@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
@@ -8,6 +9,8 @@ public class GameController : MonoBehaviour
     [SerializeField] int Score;
     public int Life;
 
+    public Text lifeText;
+    public Text ScoreText;
 
     public GameObject PausePanel;
     public GameObject GameOverPanel;
@@ -50,6 +53,8 @@ public class GameController : MonoBehaviour
     public void GetCoin()
     {
         Score++;
+
+        ScoreText.text = "X " + Score.ToString();
     }
 
     public void ShowGameOver()
@@ -75,6 +80,7 @@ public class GameController : MonoBehaviour
         if (Life >= 1)
         {
             Player.transform.position = new Vector3(CheckPoint.transform.position.x, CheckPoint.transform.position.y, 0f);
+            lifeText.text = "X " + Life.ToString();
         }
         if (Life <= 0)
         {

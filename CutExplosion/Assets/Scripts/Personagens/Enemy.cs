@@ -42,6 +42,7 @@ public class Enemy : MonoBehaviour
     {
         Collider2D hit = Physics2D.OverlapCircle(Point.position, Radius, PlayerBasicLayer);
 
+        Debug.Log("Tá vendo o player");
         if (hit != null)
         {
             playerIsClose = true;
@@ -56,9 +57,7 @@ public class Enemy : MonoBehaviour
     {
         Collider2D hit = Physics2D.OverlapCircle(Point.position, Radius, PlayerMageLayer);
 
-
         //andar para o mago
-
 
         if (hit != null)
         {

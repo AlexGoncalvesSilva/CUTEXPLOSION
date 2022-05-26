@@ -141,7 +141,7 @@ MonoBehaviour:
   StartPos: {fileID: 0}
   PlayerBasicLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 512
   PlayerMageLayer:
     serializedVersion: 2
     m_Bits: 1024
