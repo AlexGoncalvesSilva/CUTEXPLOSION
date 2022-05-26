@@ -139,12 +139,12 @@ MonoBehaviour:
   Radius: 12
   Point: {fileID: 6784137047478577083}
   StartPos: {fileID: 0}
-  PlayerBasicLayer:
-    serializedVersion: 2
-    m_Bits: 512
   PlayerMageLayer:
     serializedVersion: 2
     m_Bits: 1024
+  PlayerBasicLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &6784137047478577080
 GameObject:
   m_ObjectHideFlags: 0

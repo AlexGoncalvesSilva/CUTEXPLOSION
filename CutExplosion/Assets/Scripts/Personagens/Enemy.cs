@@ -11,11 +11,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float Radius;
 
     private bool playerIsClose;
+    private bool mageIsClose;
 
     public Transform Point;
     public GameObject StartPos;
-    public LayerMask PlayerBasicLayer;
     public LayerMask PlayerMageLayer;
+    public LayerMask PlayerBasicLayer;
 
     // Start is called before the first frame update
     void Start()
@@ -27,9 +28,17 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SeePlayerBasic();
         SeePlayerMage();
-        if (playerIsClose == true) { Move(); }
+
+        if (playerIsClose == true) 
+        {
+            Move(); 
+            Debug.Log("Tá vendo o player"); 
+        }
+        if (mageIsClose == true)
+        {
+            Debug.Log("Na área");
+        }
     }
 
     void Move()
@@ -42,12 +51,11 @@ public class Enemy : MonoBehaviour
     {
         Collider2D hit = Physics2D.OverlapCircle(Point.position, Radius, PlayerBasicLayer);
 
-        Debug.Log("Tá vendo o player");
         if (hit != null)
         {
             playerIsClose = true;
         }
-        if (hit == null)
+        else
         {
             playerIsClose = false;
         }
@@ -61,11 +69,11 @@ public class Enemy : MonoBehaviour
 
         if (hit != null)
         {
-            playerIsClose = true;
+            mageIsClose = true;
         }
-        if (hit == null)
+        else
         {
-            playerIsClose = false;
+            mageIsClose = false;
         }
     }
 
