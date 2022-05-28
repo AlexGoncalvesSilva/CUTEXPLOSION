@@ -37,6 +37,7 @@ public class Enemy : MonoBehaviour
         }
         if (mageIsClose == true)
         {
+            Move();
             Debug.Log("Na área");
         }
     }
