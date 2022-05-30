@@ -133,6 +133,7 @@ public class PlayerBasic : MonoBehaviour
             {
                 GameController.instance.LostLife();
                 life--;
+
                 if (life <= 0)
                 {
                     isDead = true;

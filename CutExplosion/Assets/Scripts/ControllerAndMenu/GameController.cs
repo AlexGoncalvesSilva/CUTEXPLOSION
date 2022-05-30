@@ -16,6 +16,12 @@ public class GameController : MonoBehaviour
     public GameObject GameOverPanel;
     public GameObject CheckPoint;
     public GameObject Player;
+    public GameObject Bg;
+    public GameObject BgPosition;
+    public GameObject Clouds;
+    public GameObject CloudPosition;
+
+    public bool ResetParallax;
 
     public static GameController instance;
 
@@ -29,6 +35,14 @@ public class GameController : MonoBehaviour
     void Start()
     {
         Life = 5;
+    }
+
+    public void Update()
+    {
+        if (ResetParallax == true)
+        {
+            StartCoroutine("RotinaReseteParallax");
+        }
     }
 
     public void ActivePauseButton()
@@ -73,6 +87,12 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         ShowGameOver();
     }
+    
+    IEnumerator RotinaReseteParallax()
+    {
+        yield return new WaitForSeconds(0.5f);
+        ResetParallax = false;
+    }
 
     public void LostLife()
     {
@@ -80,6 +100,10 @@ public class GameController : MonoBehaviour
         if (Life >= 1)
         {
             Player.transform.position = new Vector3(CheckPoint.transform.position.x, CheckPoint.transform.position.y, 0f);
+            Bg.transform.position = new Vector3(BgPosition.transform.position.x, BgPosition.transform.position.y, 0f);
+            Clouds.transform.position = new Vector3(CloudPosition.transform.position.x, CloudPosition.transform.position.y, 0f);
+            ResetParallax = true;
+
             lifeText.text = "X " + Life.ToString();
         }
         if (Life <= 0)

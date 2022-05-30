@@ -1251,6 +1251,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PlayerBasic, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7158835228981286271
 GameObject:
   m_ObjectHideFlags: 0
@@ -2532,6 +2544,10 @@ MonoBehaviour:
   GameOverPanel: {fileID: 7158835229117197035}
   CheckPoint: {fileID: 7158835229097721014}
   Player: {fileID: 7158835229334591917}
+  Bg: {fileID: 0}
+  BgPosition: {fileID: 0}
+  Clouds: {fileID: 0}
+  CloudPosition: {fileID: 0}
 --- !u!1 &7158835230139788256
 GameObject:
   m_ObjectHideFlags: 0
