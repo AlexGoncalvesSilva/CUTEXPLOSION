@@ -90,7 +90,6 @@ public class PlayerBasic : MonoBehaviour
 
     public void Down()
     {
-
         rig.AddForce(Vector2.down * DownForce, ForceMode2D.Impulse);
     }
 

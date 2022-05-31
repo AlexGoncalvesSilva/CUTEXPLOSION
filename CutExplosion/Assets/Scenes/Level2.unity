@@ -407,7 +407,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299498060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 170.1768, y: 7.17, z: 0}
+  m_LocalPosition: {x: 170.1768, y: 7.89, z: 0}
   m_LocalScale: {x: 366.78348, y: 1.7930187, z: 1}
   m_Children: []
   m_Father: {fileID: 1360109853}
@@ -856,7 +856,7 @@ GameObject:
   - component: {fileID: 2056861944}
   - component: {fileID: 2056861946}
   - component: {fileID: 2056861945}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -871,7 +871,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056861943}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 170.1768, y: -7.16, z: 0}
+  m_LocalPosition: {x: 170.1768, y: -8.06, z: 0}
   m_LocalScale: {x: 366.78348, y: 1.7930187, z: 1}
   m_Children: []
   m_Father: {fileID: 1360109853}
@@ -1029,6 +1029,10 @@ PrefabInstance:
       propertyPath: flyForce
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 484484357732407201, guid: f27b4a92041e8784193e2c3fb7241770, type: 3}
+      propertyPath: Life
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5927640975177129726, guid: f27b4a92041e8784193e2c3fb7241770, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -1076,6 +1080,10 @@ PrefabInstance:
     - target: {fileID: 6319763682693700600, guid: f27b4a92041e8784193e2c3fb7241770, type: 3}
       propertyPath: m_Name
       value: MageCore
+      objectReference: {fileID: 0}
+    - target: {fileID: 6319763682693700600, guid: f27b4a92041e8784193e2c3fb7241770, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f27b4a92041e8784193e2c3fb7241770, type: 3}

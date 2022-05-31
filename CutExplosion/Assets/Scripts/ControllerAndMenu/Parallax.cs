@@ -20,28 +20,25 @@ public class Parallax : MonoBehaviour
     void Start()
     {
         instance = this;
-        //rig = GetComponent <Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
-    {
-        //MoveBackGround();    
+    {   
         BgMove();
-    }
-
-    private void FixedUpdate()
-    {
         if (GameController.instance.ResetParallax == true)
         {
             BgDistance = 0;
         }
+    }
+
+    void LateUpdate()
+    {
         if (GameController.instance.ResetParallax == false)
         {
             BgDistance += -Time.deltaTime / i;
         }
-       
     }
 
     void BgMove()
@@ -49,15 +46,4 @@ public class Parallax : MonoBehaviour
         Vector3 NewCamPosition = new Vector3(player.position.x + BgDistance, 0f, transform.position.z);
         transform.position = Vector3.Slerp(transform.position, NewCamPosition, BgSpeed * Time.deltaTime);
     }
-
-    //void MoveBackGround()
-    //{
-    //    Vector3 movement = new Vector3(1f, 0f, 0f);
-    //    transform.position += movement * Speed * Time.deltaTime;
-    //}
-
-    //public void RepositionDash()
-    //{
-    //    rig.AddForce(Vector2.right * DashForce, ForceMode2D.Impulse);
-    //}
 }

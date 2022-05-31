@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         SeePlayerMage();
+        SeePlayerBasic();
 
         if (playerIsClose == true) 
         {
