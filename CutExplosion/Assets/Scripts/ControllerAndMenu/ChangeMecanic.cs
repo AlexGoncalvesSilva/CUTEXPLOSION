@@ -5,14 +5,18 @@ using UnityEngine;
 public class ChangeMecanic : MonoBehaviour
 {
 
-    public GameObject BasicPlayer;
-    public GameObject MagePlayer;
-    public Transform SpawnPosition;
+    public GameObject BasicPlayerr;
+    public GameObject MagePlayerr;
+
+    public bool Changed;
+
+    public static ChangeMecanic instance;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        instance = this;
+        Changed = false;
     }
 
     // Update is called once per frame
@@ -21,17 +25,33 @@ public class ChangeMecanic : MonoBehaviour
         
     }
 
+    IEnumerator RotinaChangePlayerForMage()
+    {
+        yield return new WaitForSeconds(0.4f);
+        BasicPlayerr.SetActive(false);
+        MagePlayerr.SetActive(true);
+    }
+
+    IEnumerator RotinaChangePlayerForBasic()
+    {
+        yield return new WaitForSeconds(0.4f);
+        BasicPlayerr.SetActive(true);
+        MagePlayerr.SetActive(false);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 6)
         {
-            BasicPlayer.SetActive(false);
-            MagePlayer.SetActive(true);
+            StartCoroutine("RotinaChangePlayerForMage");
+            Changed = true;
+            Debug.Log("Tocou");
         }
         if (collision.gameObject.layer == 10)
         {
-            BasicPlayer.SetActive(true);
-            MagePlayer.SetActive(false);
-        }   
+            StartCoroutine("RotinaChangePlayerForBasic");
+            Changed = true;
+            Debug.Log("Tocou");
+        }
     }
 }

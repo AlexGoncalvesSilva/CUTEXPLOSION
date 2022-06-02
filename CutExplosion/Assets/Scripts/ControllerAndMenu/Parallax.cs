@@ -43,7 +43,7 @@ public class Parallax : MonoBehaviour
 
     void BgMove()
     {
-        Vector3 NewCamPosition = new Vector3(player.position.x + BgDistance, 0f, transform.position.z);
-        transform.position = Vector3.Slerp(transform.position, NewCamPosition, BgSpeed * Time.deltaTime);
+        Vector3 NewBgPosition = new Vector3(player.position.x + BgDistance, 0f, transform.position.z);
+        transform.position = Vector3.Slerp(transform.position, NewBgPosition, BgSpeed * Time.deltaTime);
     }
 }

@@ -2,20 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovePlataform : MonoBehaviour
+public class MovePlataformVertical : MonoBehaviour
 {
-
-    [SerializeField] private float SpeedHorizontal;
+    [SerializeField] private float SpeedVertical;
     [SerializeField] private float i;
 
 
     private bool PlayerOnPlataform;
-    private bool MoveForRight;
+    private bool MoveUp;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -31,27 +30,27 @@ public class MovePlataform : MonoBehaviour
 
     void MovePlataformHorizontal()
     {
-        if (MoveForRight == true)
+        if (MoveUp == true)
         {
-            Vector3 movement = new Vector3(1f, 0f, 0f);
-            transform.position += movement * SpeedHorizontal * Time.deltaTime;
+            Vector3 movement = new Vector3(0f, 1f, 0f);
+            transform.position += movement * SpeedVertical * Time.deltaTime;
         }
-        if (MoveForRight == false)
+        if (MoveUp == false)
         {
-            Vector3 movement = new Vector3(-1f, 0f, 0f);
-            transform.position += movement * SpeedHorizontal * Time.deltaTime;
+            Vector3 movement = new Vector3(0f, -1f, 0f);
+            transform.position += movement * SpeedVertical * Time.deltaTime;
         }
     }
 
     IEnumerator RotinaForVelocity()
     {
         yield return new WaitForSeconds(i);
-        MoveForRight = false;
+        MoveUp = false;
     }
 
     IEnumerator RotinaForBool()
     {
-        yield return new WaitForSeconds(2*i);
+        yield return new WaitForSeconds(2 * i);
         PlayerOnPlataform = false;
     }
 
@@ -61,7 +60,7 @@ public class MovePlataform : MonoBehaviour
         if (collision.gameObject.layer == 6)
         {
             PlayerOnPlataform = true;
-            MoveForRight = true;
+            MoveUp = true;
             Debug.Log("PLayer em cima");
         }
     }
