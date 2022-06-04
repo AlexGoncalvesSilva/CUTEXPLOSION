@@ -29,17 +29,6 @@ public class PlayerMage : MonoBehaviour
         Vector3 movement = new Vector3(1f, 0f, 0f);
         transform.position += movement * Speed * Time.deltaTime;
 
-        //if (Input.GetKey(KeyCode.Space))
-        //{
-        //    rig.AddForce(Vector2.up * flyForce, ForceMode2D.Impulse);
-        //    //Vector3 fly = new Vector3(0f, 1f, 0f);
-        //    //transform.position += fly * flyForce * Time.deltaTime;
-        //    Debug.Log("clicou");
-        //    anim.SetInteger("Transition", 1);
-        //}
-        {
-
-        }
         if (Input.touchCount > 0)
         {
             rig.AddForce(Vector2.up * flyForce, ForceMode2D.Impulse);
@@ -64,7 +53,16 @@ public class PlayerMage : MonoBehaviour
                 anim.SetInteger("Transition", 2);
             }
         }
+        if (collision.gameObject.layer == 13)
+        {
+            GameController.instance.LostLife();
+            if (life <= 0)
+            {
+                anim.SetInteger("Transition", 2);
+            }
+        }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Coin"))

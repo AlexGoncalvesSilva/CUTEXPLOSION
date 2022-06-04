@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9096669668083434728}
   - component: {fileID: 9096669668083434730}
   - component: {fileID: 9096669668083434731}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: espinhos
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -5,10 +5,6 @@ using UnityEngine;
 public class Parallax : MonoBehaviour
 {
 
-    //[SerializeField] private float Speed;
-    //[SerializeField] private float DashForce;
-    //private Rigidbody2D rig;
-
     [SerializeField] private float BgSpeed;
     [SerializeField] private float BgDistance;
     private Transform player;
@@ -25,7 +21,7 @@ public class Parallax : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
+    {
         BgMove();
         if (GameController.instance.ResetParallax == true)
         {

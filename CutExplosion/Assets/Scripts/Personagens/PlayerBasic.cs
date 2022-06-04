@@ -126,6 +126,7 @@ public class PlayerBasic : MonoBehaviour
             isGround = true;
             isJumping = false;
         }
+
         if (collision.gameObject.layer == 8)
         {
             if (canDie == true)
@@ -138,8 +139,22 @@ public class PlayerBasic : MonoBehaviour
                     isDead = true;
                     anim.SetInteger("Transition", 2);
                 }
+            }  
+        }
+
+        if (collision.gameObject.layer == 13)
+        {
+            if (canDie == true)
+            {
+                GameController.instance.LostLife();
+                life--;
+
+                if (life <= 0)
+                {
+                    isDead = true;
+                    anim.SetInteger("Transition", 2);
+                }
             }
-           
         }
     }
 

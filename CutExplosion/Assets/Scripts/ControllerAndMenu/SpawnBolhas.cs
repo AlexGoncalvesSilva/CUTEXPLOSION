@@ -10,11 +10,15 @@ public class SpawnBolhas : MonoBehaviour
     private float TimerInitial;
     [SerializeField] private float TimerFinal;
 
+    public bool InMenu;
+
     int random;
+
+    public static SpawnBolhas instance;
     // Start is called before the first frame update
     void Start()
     {
-
+       
     }
 
     // Update is called once per frame
