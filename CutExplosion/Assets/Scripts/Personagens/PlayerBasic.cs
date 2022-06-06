@@ -10,6 +10,7 @@ public class PlayerBasic : MonoBehaviour
     [SerializeField] private float DashForce;
     [SerializeField] private float StartDashTimer;
     [SerializeField] private int life;
+    [SerializeField] private float Radius;
     private float CurrentDashTimer;
 
     private bool isGround;
@@ -20,6 +21,9 @@ public class PlayerBasic : MonoBehaviour
 
     private Rigidbody2D rig;
     public Animator anim;
+
+    public Transform Point;
+    public LayerMask GroundMask;
 
     public static PlayerBasic instance;
 
@@ -39,6 +43,7 @@ public class PlayerBasic : MonoBehaviour
     void Update()
     {
         MovePlayer();
+        ForCanNotJumpInAir();
         if (canDash == false)
         {
             CurrentDashTimer -= Time.deltaTime;
@@ -119,6 +124,16 @@ public class PlayerBasic : MonoBehaviour
         canDie = true;
     }
 
+    void ForCanNotJumpInAir()
+    {
+        Collider2D hit = Physics2D.OverlapCircle(Point.position, Radius, GroundMask);
+        if(hit == null)
+        {
+            isGround = false;
+        }
+    }
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 7)
@@ -169,5 +184,9 @@ public class PlayerBasic : MonoBehaviour
         //{
         //    Debug.Log("Tutorial");
         //}
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(Point.position, Radius);
     }
 }
