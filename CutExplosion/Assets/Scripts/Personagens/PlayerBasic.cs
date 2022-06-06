@@ -165,5 +165,9 @@ public class PlayerBasic : MonoBehaviour
             GameController.instance.GetCoin();
             Destroy(collision.gameObject, 0.1f);
         }
+        //if(collision.gameObject.layer == 14)
+        //{
+        //    Debug.Log("Tutorial");
+        //}
     }
 }

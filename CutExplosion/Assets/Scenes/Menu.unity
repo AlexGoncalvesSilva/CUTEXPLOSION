@@ -158,6 +158,7 @@ MonoBehaviour:
   - {fileID: 6573555335663376917, guid: 42cc10e9ba3de06439c75fbc967ba388, type: 3}
   SpawnPosition: {fileID: 41492461}
   TimerFinal: 6
+  InMenu: 0
 --- !u!4 &41492461
 Transform:
   m_ObjectHideFlags: 0
@@ -875,6 +876,7 @@ MonoBehaviour:
   - {fileID: 6573555335663376917, guid: 42cc10e9ba3de06439c75fbc967ba388, type: 3}
   SpawnPosition: {fileID: 402801295}
   TimerFinal: 4
+  InMenu: 0
 --- !u!4 &402801295
 Transform:
   m_ObjectHideFlags: 0
@@ -1111,8 +1113,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.29998, y: 58.50003}
-  m_SizeDelta: {x: 394.66, y: 55.91}
+  m_AnchoredPosition: {x: 0, y: 134}
+  m_SizeDelta: {x: 325.19, y: 46.07}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &533744021
 MonoBehaviour:
@@ -3079,6 +3081,7 @@ MonoBehaviour:
   - {fileID: 6573555335663376917, guid: 42cc10e9ba3de06439c75fbc967ba388, type: 3}
   SpawnPosition: {fileID: 1297791403}
   TimerFinal: 5
+  InMenu: 0
 --- !u!4 &1297791403
 Transform:
   m_ObjectHideFlags: 0
@@ -3346,6 +3349,7 @@ MonoBehaviour:
   - {fileID: 6573555335663376917, guid: 42cc10e9ba3de06439c75fbc967ba388, type: 3}
   SpawnPosition: {fileID: 1372574408}
   TimerFinal: 5
+  InMenu: 0
 --- !u!4 &1372574408
 Transform:
   m_ObjectHideFlags: 0
@@ -3735,6 +3739,7 @@ MonoBehaviour:
   - {fileID: 6573555335663376917, guid: 42cc10e9ba3de06439c75fbc967ba388, type: 3}
   SpawnPosition: {fileID: 1632226357}
   TimerFinal: 8
+  InMenu: 0
 --- !u!4 &1632226357
 Transform:
   m_ObjectHideFlags: 0
@@ -4006,6 +4011,7 @@ MonoBehaviour:
   - {fileID: 6573555335663376917, guid: 42cc10e9ba3de06439c75fbc967ba388, type: 3}
   SpawnPosition: {fileID: 1789888756}
   TimerFinal: 10
+  InMenu: 0
 --- !u!4 &1789888756
 Transform:
   m_ObjectHideFlags: 0
@@ -4255,6 +4261,7 @@ MonoBehaviour:
   - {fileID: 6573555335663376917, guid: 42cc10e9ba3de06439c75fbc967ba388, type: 3}
   SpawnPosition: {fileID: 1991375726}
   TimerFinal: 6
+  InMenu: 0
 --- !u!4 &1991375726
 Transform:
   m_ObjectHideFlags: 0
@@ -4504,6 +4511,7 @@ MonoBehaviour:
   - {fileID: 6573555335663376917, guid: 42cc10e9ba3de06439c75fbc967ba388, type: 3}
   SpawnPosition: {fileID: 2122518050}
   TimerFinal: 7
+  InMenu: 0
 --- !u!4 &2122518050
 Transform:
   m_ObjectHideFlags: 0
