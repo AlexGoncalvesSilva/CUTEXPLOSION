@@ -15,16 +15,21 @@ public class SpawnBolhas : MonoBehaviour
     int random;
 
     public static SpawnBolhas instance;
+
     // Start is called before the first frame update
     void Start()
     {
-       
+        instance = this;
+        InMenu = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        SpawnBarrel();
+        if (InMenu == true)
+        {
+            SpawnBarrel();
+        }
     }
 
     void SpawnBarrel()

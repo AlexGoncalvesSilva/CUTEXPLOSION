@@ -729,7 +729,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -366}
+  m_AnchoredPosition: {x: 0, y: -340}
   m_SizeDelta: {x: 64.19228, y: 34.6682}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7158835228552198196
@@ -921,7 +921,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -502.6538, y: -215.23575}
+  m_AnchoredPosition: {x: -502.6538, y: -196.53575}
   m_SizeDelta: {x: 110.9782, y: 107.2336}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7158835228835928702
@@ -1185,7 +1185,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -503.26868, y: -74.7}
+  m_AnchoredPosition: {x: -503.26868, y: -56}
   m_SizeDelta: {x: 129.0936, y: 126.263}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7158835228895582254
@@ -1716,7 +1716,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -153}
+  m_AnchoredPosition: {x: 0, y: -118}
   m_SizeDelta: {x: 48.47, y: 34.668213}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7158835229325616163
@@ -1823,7 +1823,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7158835229334591913}
   - component: {fileID: 7158835229334591914}
+  - component: {fileID: 3711476545175305092}
   - component: {fileID: 7158835229334591915}
+  - component: {fileID: 2202833306453716293}
   - component: {fileID: 7158835229334591916}
   m_Layer: 6
   m_Name: Player
@@ -1868,11 +1870,32 @@ MonoBehaviour:
   life: 5
   Radius: 0.86
   canDie: 0
+  hitTrap: 0
   anim: {fileID: 7158835228981286268}
   Point: {fileID: 1987642550512439028}
   GroundMask:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &3711476545175305092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7158835229334591917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2a9153ab36168849925b654d18acfea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinSound: {fileID: 8300000, guid: 581cd4ca0919a474496e2075f9bec0e2, type: 3}
+  dashSound: {fileID: 8300000, guid: d7e3791af8ed189489ae9d066026df0b, type: 3}
+  downSound: {fileID: 8300000, guid: b4b7e6a9c23cdba45b57d5f71e7f5434, type: 3}
+  jumpSound: {fileID: 8300000, guid: 405f7de60e73105419ee18e345fe4122, type: 3}
+  deadSound: {fileID: 8300000, guid: 25a4164b8a2816342aac20b198fd0637, type: 3}
+  gameOverSound: {fileID: 8300000, guid: d03521383973d4e48bc061b55c379157, type: 3}
+  bolhaSound: {fileID: 8300000, guid: 654cf0e94b436aa4b91cf397d21973b2, type: 3}
+  arrowSound: {fileID: 8300000, guid: 9aa1b3e5f267a68459eb31fb1c84c878, type: 3}
 --- !u!58 &7158835229334591915
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1889,6 +1912,102 @@ CircleCollider2D:
   m_Offset: {x: 0.067325175, y: -0.40629435}
   serializedVersion: 2
   m_Radius: 0.7834935
+--- !u!82 &2202833306453716293
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7158835229334591917}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!50 &7158835229334591916
 Rigidbody2D:
   serializedVersion: 4
@@ -2020,7 +2139,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 475.31866, y: -210.52881}
+  m_AnchoredPosition: {x: 475.31866, y: -191.82881}
   m_SizeDelta: {x: 110.9782, y: 107.2336}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7158835229631595733
@@ -2284,7 +2403,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 46.9, y: 448}
+  m_AnchoredPosition: {x: 41.5, y: 392}
   m_SizeDelta: {x: 152.10172, y: 86.5404}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7158835229762714467
@@ -2620,7 +2739,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -266}
+  m_AnchoredPosition: {x: 0, y: -223}
   m_SizeDelta: {x: 58.78774, y: 34.6682}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7158835230139788268
@@ -2887,8 +3006,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.20838857, y: -2.3551464}
-  m_SizeDelta: {x: 127.0642, y: 508.0736}
+  m_AnchoredPosition: {x: 0, y: -0.4965}
+  m_SizeDelta: {x: 113.01449, y: 451.89508}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7158835230295467218
 CanvasRenderer:

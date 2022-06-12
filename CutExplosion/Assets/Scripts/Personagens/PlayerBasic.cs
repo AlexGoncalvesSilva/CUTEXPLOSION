@@ -18,7 +18,9 @@ public class PlayerBasic : MonoBehaviour
     private bool isDead;
     private bool isJumping;
     public bool canDie;
+    public bool hitTrap;
 
+    private AudioController audioController;
     private Rigidbody2D rig;
     public Animator anim;
 
@@ -30,7 +32,9 @@ public class PlayerBasic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hitTrap = false;
         instance = this;
+        audioController = GetComponent<AudioController>();
         rig = GetComponent<Rigidbody2D>();
         isGround = true;
         canDash = true;
@@ -84,6 +88,7 @@ public class PlayerBasic : MonoBehaviour
             anim.SetInteger("Transition", 1);
             isGround = false;
             StartCoroutine("RotinaJump");
+            audioController.PlaySFX(audioController.jumpSound);
         }
     }
 
@@ -96,6 +101,7 @@ public class PlayerBasic : MonoBehaviour
     public void Down()
     {
         rig.AddForce(Vector2.down * DownForce, ForceMode2D.Impulse);
+        audioController.PlaySFX(audioController.downSound);
     }
 
     public void Dash()
@@ -107,6 +113,7 @@ public class PlayerBasic : MonoBehaviour
             canDash = false;
             CurrentDashTimer = StartDashTimer;
             canDie = false;
+            audioController.PlaySFX(audioController.dashSound);
             StartCoroutine("Rotina");
             StartCoroutine("RotinaCanDie");
         }
@@ -124,6 +131,12 @@ public class PlayerBasic : MonoBehaviour
         canDie = true;
     }
 
+    IEnumerator RotinaTrap()
+    {
+        yield return new WaitForSeconds(1.1f);
+        hitTrap = false;
+    }
+
     void ForCanNotJumpInAir()
     {
         Collider2D hit = Physics2D.OverlapCircle(Point.position, Radius, GroundMask);
@@ -132,7 +145,6 @@ public class PlayerBasic : MonoBehaviour
             isGround = false;
         }
     }
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -148,11 +160,13 @@ public class PlayerBasic : MonoBehaviour
             {
                 GameController.instance.LostLife();
                 life--;
+                audioController.PlaySFX(audioController.deadSound);
 
                 if (life <= 0)
                 {
                     isDead = true;
                     anim.SetInteger("Transition", 2);
+                    audioController.PlaySFX(audioController.deadSound);
                 }
             }  
         }
@@ -163,11 +177,14 @@ public class PlayerBasic : MonoBehaviour
             {
                 GameController.instance.LostLife();
                 life--;
-
+                hitTrap = true;
+                StartCoroutine("RotinaTrap");
+                audioController.PlaySFX(audioController.deadSound);
                 if (life <= 0)
                 {
                     isDead = true;
                     anim.SetInteger("Transition", 2);
+                    audioController.PlaySFX(audioController.deadSound);
                 }
             }
         }
@@ -178,6 +195,7 @@ public class PlayerBasic : MonoBehaviour
         if (collision.CompareTag("Coin"))
         {
             GameController.instance.GetCoin();
+            audioController.PlaySFX(audioController.coinSound);
             Destroy(collision.gameObject, 0.1f);
         }
         //if(collision.gameObject.layer == 14)

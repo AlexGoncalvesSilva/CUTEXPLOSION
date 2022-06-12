@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 8
+  SpeedVertical: 2
   Radius: 12
   Point: {fileID: 6784137047478577083}
   StartPos: {fileID: 0}

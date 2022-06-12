@@ -13,36 +13,37 @@ public class Menu : MonoBehaviour
     public void ActivePlayButton()
     {
         PlayPanel.SetActive(true);
+        SpawnBolhas.instance.InMenu = false;
     }
 
     public void ExitPlayButton()
     {
         PlayPanel.SetActive(false);
+        SpawnBolhas.instance.InMenu = true;
     }
 
     public void ActiveSettings()
     {
         SettingsPanel.SetActive(true);
+        SpawnBolhas.instance.InMenu = false;
     }
 
     public void ExitSettings()
     {
         SettingsPanel.SetActive(false);
+        SpawnBolhas.instance.InMenu = true;
     }
 
     public void ActiveCredits()
     {
         CreditsPanel.SetActive(true);
+        SpawnBolhas.instance.InMenu = false;
     }
 
     public void ExitCredits()
     {
         CreditsPanel.SetActive(false);
-    }
-
-    public void TutorialButton()
-    {
-
+        SpawnBolhas.instance.InMenu = true;
     }
 
     public void ExitButton()

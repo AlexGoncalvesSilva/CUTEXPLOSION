@@ -816,7 +816,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5927640975177129726}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &484484356908501772
 GameObject:
@@ -1034,9 +1034,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 484484357179983581}
+  - component: {fileID: 484484357179983582}
+  - component: {fileID: 3978241640372584983}
+  - component: {fileID: 2450338720236433134}
   - component: {fileID: 484484357179983583}
   - component: {fileID: 484484357179983580}
-  - component: {fileID: 484484357179983582}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -1056,10 +1058,141 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 484484356396547730}
-  - {fileID: 484484357286581605}
   m_Father: {fileID: 5927640975177129726}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &484484357179983582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484484357179983554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fca95e9ab92b8346ab7882b07e61422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 10
+  flyForce: 1
+  life: 5
+  anim: {fileID: 484484356396547821}
+--- !u!114 &3978241640372584983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484484357179983554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2a9153ab36168849925b654d18acfea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinSound: {fileID: 8300000, guid: 581cd4ca0919a474496e2075f9bec0e2, type: 3}
+  dashSound: {fileID: 8300000, guid: d7e3791af8ed189489ae9d066026df0b, type: 3}
+  downSound: {fileID: 8300000, guid: 1ff23c7c540ada24397fd03ce36af1ad, type: 3}
+  jumpSound: {fileID: 8300000, guid: b4b7e6a9c23cdba45b57d5f71e7f5434, type: 3}
+  deadSound: {fileID: 8300000, guid: 25a4164b8a2816342aac20b198fd0637, type: 3}
+  gameOverSound: {fileID: 8300000, guid: d03521383973d4e48bc061b55c379157, type: 3}
+  bolhaSound: {fileID: 8300000, guid: 654cf0e94b436aa4b91cf397d21973b2, type: 3}
+  arrowSound: {fileID: 8300000, guid: 9aa1b3e5f267a68459eb31fb1c84c878, type: 3}
+--- !u!82 &2450338720236433134
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484484357179983554}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!58 &484484357179983583
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1091,28 +1224,12 @@ Rigidbody2D:
   m_Mass: 0.8
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &484484357179983582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 484484357179983554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fca95e9ab92b8346ab7882b07e61422, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 10
-  flyForce: 2.5
-  life: 5
-  anim: {fileID: 484484356396547821}
 --- !u!1 &484484357235198823
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,13 +1331,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484484357286581610}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.43, y: 0, z: 0}
+  m_LocalPosition: {x: -128.09015, y: -976.62134, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 484484357732407200}
   - {fileID: 484484357503271496}
   - {fileID: 484484358361193225}
-  m_Father: {fileID: 484484357179983581}
+  m_Father: {fileID: 5927640975177129726}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &484484357296950319
@@ -2542,6 +2659,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 484484357810022772}
+  - {fileID: 484484357286581605}
   - {fileID: 484484357179983581}
   - {fileID: 484484356888440950}
   m_Father: {fileID: 0}

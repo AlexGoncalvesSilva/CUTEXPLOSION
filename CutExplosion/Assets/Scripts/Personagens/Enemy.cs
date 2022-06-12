@@ -8,10 +8,13 @@ public class Enemy : MonoBehaviour
     Rigidbody2D rig;
 
     [SerializeField] private float Speed;
+    [SerializeField] private float SpeedVertical;
     [SerializeField] private float Radius;
 
     private bool playerIsClose;
     private bool mageIsClose;
+
+    public bool trueIsBasicLvl;
 
     public Transform Point;
     public GameObject StartPos;
@@ -33,20 +36,61 @@ public class Enemy : MonoBehaviour
 
         if (playerIsClose == true) 
         {
-            Move(); 
+            MoveToBasic(); 
             Debug.Log("Tá vendo o player"); 
         }
+
         if (mageIsClose == true)
         {
-            Move();
+            MoveToMage();
             Debug.Log("Na área");
         }
+
+        if (trueIsBasicLvl == true) 
+        {
+            if (PlayerBasic.instance.hitTrap == true)
+            {
+                transform.position = new Vector3(StartPos.transform.position.x, StartPos.transform.position.y, 0f);
+            }
+        }
+        if (trueIsBasicLvl == false)
+        {
+            if (PlayerMage.instance.hitTrap == true)
+            {
+                transform.position = new Vector3(StartPos.transform.position.x, StartPos.transform.position.y, 0f);
+            }
+        }
+        
     }
 
-    void Move()
+    private void FixedUpdate()
+    {
+    }
+
+    void MoveToBasic()
     {
         Vector3 movement = new Vector3(-1f, 0f, 0f);
         transform.position += movement * Speed * Time.deltaTime;
+    }
+
+    void MoveToMage()
+    {
+        Vector3 movement = new Vector3(-1f, 0f, 0f);
+        transform.position += movement * Speed * Time.deltaTime;
+
+        Vector3 upAndDown = new Vector3(0f, 1f, 0f);
+        transform.position += upAndDown * SpeedVertical * Time.deltaTime;
+
+        //rig.velocity = new Vector2(Speed, 0);
+
+        if (transform.position.y >= 5)
+        {
+            SpeedVertical = -SpeedVertical;
+        }
+        if (transform.position.y <= -5.5)
+        {
+            SpeedVertical = -SpeedVertical;
+        }
     }
 
     void SeePlayerBasic()

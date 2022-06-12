@@ -17,6 +17,7 @@ public class Parallax : MonoBehaviour
     {
         instance = this;
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        BgDistance = 0;
     }
 
     // Update is called once per frame
