@@ -127,7 +127,7 @@ public class PlayerBasic : MonoBehaviour
     
     IEnumerator RotinaCanDie()
     {
-        yield return new WaitForSeconds(1.1f);
+        yield return new WaitForSeconds(1f);
         canDie = true;
     }
 
@@ -173,8 +173,6 @@ public class PlayerBasic : MonoBehaviour
 
         if (collision.gameObject.layer == 13)
         {
-            if (canDie == true)
-            {
                 GameController.instance.LostLife();
                 life--;
                 hitTrap = true;
@@ -185,8 +183,8 @@ public class PlayerBasic : MonoBehaviour
                     isDead = true;
                     anim.SetInteger("Transition", 2);
                     audioController.PlaySFX(audioController.deadSound);
+               
                 }
-            }
         }
     }
 
@@ -198,10 +196,22 @@ public class PlayerBasic : MonoBehaviour
             audioController.PlaySFX(audioController.coinSound);
             Destroy(collision.gameObject, 0.1f);
         }
-        //if(collision.gameObject.layer == 14)
-        //{
-        //    Debug.Log("Tutorial");
-        //}
+        if (collision.gameObject.layer == 8)
+        {
+            if (canDie == true)
+            {
+                GameController.instance.LostLife();
+                life--;
+                audioController.PlaySFX(audioController.deadSound);
+
+                if (life <= 0)
+                {
+                    isDead = true;
+                    anim.SetInteger("Transition", 2);
+                    audioController.PlaySFX(audioController.deadSound);
+                }
+            }
+        }
     }
     private void OnDrawGizmos()
     {

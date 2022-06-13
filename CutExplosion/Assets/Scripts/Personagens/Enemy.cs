@@ -13,17 +13,20 @@ public class Enemy : MonoBehaviour
 
     private bool playerIsClose;
     private bool mageIsClose;
+    private bool isDead;
 
     public bool trueIsBasicLvl;
 
     public Transform Point;
     public GameObject StartPos;
+    public Animator anim;
     public LayerMask PlayerMageLayer;
     public LayerMask PlayerBasicLayer;
 
     // Start is called before the first frame update
     void Start()
     {
+        isDead = false;
         rig = GetComponent<Rigidbody2D>();
         playerIsClose = false;
     }
@@ -37,13 +40,23 @@ public class Enemy : MonoBehaviour
         if (playerIsClose == true) 
         {
             MoveToBasic(); 
-            Debug.Log("Tá vendo o player"); 
+            Debug.Log("Tá vendo o player");
+            if (!isDead)
+            {
+                anim.SetInteger("Transition", 1);
+            }
         }
 
         if (mageIsClose == true)
         {
             MoveToMage();
             Debug.Log("Na área");
+            anim.SetInteger("Transition", 1);
+        }
+
+        if (!playerIsClose && !mageIsClose)
+        {
+            anim.SetInteger("Transition", 0);
         }
 
         if (trueIsBasicLvl == true) 
@@ -69,8 +82,17 @@ public class Enemy : MonoBehaviour
 
     void MoveToBasic()
     {
-        Vector3 movement = new Vector3(-1f, 0f, 0f);
-        transform.position += movement * Speed * Time.deltaTime;
+        if (isDead == false)
+        {
+            Vector3 movement = new Vector3(-1f, 0f, 0f);
+            transform.position += movement * Speed * Time.deltaTime;
+        }
+        if (isDead == true)
+        {
+            Vector3 movement = new Vector3(1f, 0f, 0f);
+            transform.position += movement * 0.3f * Time.deltaTime;
+        }
+
     }
 
     void MoveToMage()
@@ -123,7 +145,41 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    IEnumerator RotinaAnim()
+    {
+        yield return new WaitForSeconds(1.5f);
+        anim.SetBool("IsDead", false);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //if (collision.gameObject.layer == 6)
+        //{
+        //    if (PlayerBasic.instance.canDie == true)
+        //    {
+        //        if (GameController.instance.Life >= 1)
+        //        {
+        //            transform.position = new Vector3(StartPos.transform.position.x, StartPos.transform.position.y, 0f);
+        //        }
+        //    }
+        //    if (PlayerBasic.instance.canDie == false)
+        //    {
+        //        Destroy(this.gameObject, 1f);
+        //        anim.SetBool("IsDead", true);
+        //    }
+           
+        //}
+
+        if (collision.gameObject.layer == 10)
+        {
+            if (GameController.instance.Life >= 1)
+            {
+                transform.position = new Vector3(StartPos.transform.position.x, StartPos.transform.position.y, 0f);
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 6)
         {
@@ -136,9 +192,12 @@ public class Enemy : MonoBehaviour
             }
             if (PlayerBasic.instance.canDie == false)
             {
-                Destroy(this.gameObject, 0.08f);
+                Destroy(this.gameObject, 1.5f);
+                isDead = true;
+                anim.SetBool("IsDead", true);
+                StartCoroutine("RotinaAnim");
             }
-           
+
         }
 
         if (collision.gameObject.layer == 10)

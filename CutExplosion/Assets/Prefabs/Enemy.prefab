@@ -9,10 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6784137046368927379}
+  - component: {fileID: 6784137046368927383}
   - component: {fileID: 6784137046368927376}
   - component: {fileID: 6784137046368927382}
   - component: {fileID: 6784137046368927377}
-  - component: {fileID: 6784137046368927383}
+  - component: {fileID: 944670444587160011}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -35,6 +36,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -5.024}
+--- !u!114 &6784137046368927383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6784137046368927380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8968798eeda5e344f80f25424c4c376c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 8
+  SpeedVertical: 2
+  Radius: 14
+  trueIsBasicLvl: 0
+  Point: {fileID: 6784137047478577083}
+  StartPos: {fileID: 0}
+  anim: {fileID: 944670444587160011}
+  PlayerMageLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  PlayerBasicLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!212 &6784137046368927376
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -123,29 +149,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0.14676732, y: -0.40178344}
   m_Size: {x: 8.963535, y: 5.2272615}
   m_Direction: 1
---- !u!114 &6784137046368927383
-MonoBehaviour:
+--- !u!95 &944670444587160011
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6784137046368927380}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8968798eeda5e344f80f25424c4c376c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 8
-  SpeedVertical: 2
-  Radius: 12
-  Point: {fileID: 6784137047478577083}
-  StartPos: {fileID: 0}
-  PlayerMageLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  PlayerBasicLayer:
-    serializedVersion: 2
-    m_Bits: 64
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 005e0268d4b929a4a9d0375062bf3316, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6784137047478577080
 GameObject:
   m_ObjectHideFlags: 0

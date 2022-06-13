@@ -731,17 +731,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6784137046368927377, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6784137046368927379, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6784137046368927379, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 173.4
+      value: 173.15999
       objectReference: {fileID: 0}
     - target: {fileID: 6784137046368927379, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7
+      value: -4.71
       objectReference: {fileID: 0}
     - target: {fileID: 6784137046368927379, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -778,6 +782,14 @@ PrefabInstance:
     - target: {fileID: 6784137046368927380, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6784137046368927382, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6784137046368927383, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
+      propertyPath: Radius
+      value: 13.41
       objectReference: {fileID: 0}
     - target: {fileID: 6784137046368927383, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
       propertyPath: StartPos
@@ -1806,17 +1818,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6784137046368927377, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6784137046368927379, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6784137046368927379, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 284.6
+      value: 284.45
       objectReference: {fileID: 0}
     - target: {fileID: 6784137046368927379, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -4.22
       objectReference: {fileID: 0}
     - target: {fileID: 6784137046368927379, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1853,6 +1869,14 @@ PrefabInstance:
     - target: {fileID: 6784137046368927380, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6784137046368927382, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6784137046368927383, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
+      propertyPath: Radius
+      value: 13.41
       objectReference: {fileID: 0}
     - target: {fileID: 6784137046368927383, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
       propertyPath: StartPos
@@ -1933,7 +1957,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1052164668}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 148.09, y: 2.42, z: 0}
+  m_LocalPosition: {x: 147.39, y: -1.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 601897760}
@@ -2588,7 +2612,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1365647560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 258.5, y: 1.71, z: 0}
+  m_LocalPosition: {x: 258.73, y: -0.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 601897760}
@@ -2663,17 +2687,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6784137046368927377, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6784137046368927379, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6784137046368927379, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.4
+      value: 33.25
       objectReference: {fileID: 0}
     - target: {fileID: 6784137046368927379, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.7
+      value: -4.31
       objectReference: {fileID: 0}
     - target: {fileID: 6784137046368927379, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2714,6 +2742,14 @@ PrefabInstance:
     - target: {fileID: 6784137046368927380, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6784137046368927382, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6784137046368927383, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
+      propertyPath: Radius
+      value: 13.41
       objectReference: {fileID: 0}
     - target: {fileID: 6784137046368927383, guid: 7c03ee1ad0cd78f479a61242ed62a2e2, type: 3}
       propertyPath: StartPos
@@ -3328,7 +3364,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1676487456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8, y: 1.24, z: 0}
+  m_LocalPosition: {x: 7.55, y: -0.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 601897760}
