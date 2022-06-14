@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
     public Text ScoreText;
 
     public GameObject PausePanel;
+    //public GameObject SettingsPanel;
     public GameObject GameOverPanel;
     public GameObject CheckPoint;
     public GameObject Player;
@@ -57,6 +58,16 @@ public class GameController : MonoBehaviour
         PausePanel.SetActive(false);
     }
 
+    public static int GetStarLevel(int level)
+    {
+        return PlayerPrefs.GetInt("StarLevel" + level);
+    }
+
+    public static void SetStarLevel(int level, int amountStar)
+    {
+        PlayerPrefs.SetInt("StarLevel" + level, amountStar);
+    }
+
     public void ResetButton(int i)
     {
         Time.timeScale = 1;
@@ -92,6 +103,15 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         ResetParallax = false;
+    }
+
+    private void OnApplicationFocus(bool focus)
+    {
+        if (!focus)
+        {
+            Time.timeScale = 0;
+            PausePanel.SetActive(true);
+        }
     }
 
     public void LostLife()

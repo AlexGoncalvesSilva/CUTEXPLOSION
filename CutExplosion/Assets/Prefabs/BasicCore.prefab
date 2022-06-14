@@ -1648,7 +1648,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -161}
+  m_AnchoredPosition: {x: 0, y: -161.5}
   m_SizeDelta: {x: 48.47, y: 34.668213}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7158835229325616163
@@ -2492,7 +2492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.87058824, g: 0.62352943, b: 0.5647059, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2628,6 +2628,7 @@ MonoBehaviour:
   lifeText: {fileID: 270940086159398479}
   ScoreText: {fileID: 6056304110112486228}
   PausePanel: {fileID: 7158835228485340131}
+  SettingsPanel: {fileID: 0}
   GameOverPanel: {fileID: 7158835229117197035}
   CheckPoint: {fileID: 7158835229097721014}
   Player: {fileID: 7158835229334591917}
@@ -2671,7 +2672,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -271}
+  m_AnchoredPosition: {x: 0, y: -279.93}
   m_SizeDelta: {x: 58.78774, y: 34.6682}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7158835230139788268
@@ -2961,7 +2962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.87058824, g: 0.62352943, b: 0.5647059, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

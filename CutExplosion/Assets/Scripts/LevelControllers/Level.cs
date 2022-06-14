@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class Level : MonoBehaviour
 {
 
-    public int lvlIndex;
     public GameObject EndLevelPanel;
 
     public void LevelButton(int i)
@@ -28,6 +27,11 @@ public class Level : MonoBehaviour
         {
             EndLevelPanel.SetActive(true);
             Time.timeScale = 0;
+            if (SceneManager.GetActiveScene().buildIndex > PlayerPrefs.GetInt("FaseCompletada"))
+            {
+                PlayerPrefs.SetInt("FaseCompletada", SceneManager.GetActiveScene().buildIndex);
+                PlayerPrefs.Save();
+            }
         }
     }
 }
