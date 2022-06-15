@@ -1031,14 +1031,14 @@ PrefabInstance:
     - target: {fileID: 7158835230202015308, guid: 75973afb983281e418956f4a323be499, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d9f7a869890dc344b9f4f34151d61528, type: 3}
+      objectReference: {fileID: 21300000, guid: ff208b243cd67654eab74d9b35e570a8, type: 3}
     - target: {fileID: 7158835230202015309, guid: 75973afb983281e418956f4a323be499, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7158835230202015310, guid: 75973afb983281e418956f4a323be499, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 118.85593
+      value: 196.36404
       objectReference: {fileID: 0}
     - target: {fileID: 7158835230202015310, guid: 75973afb983281e418956f4a323be499, type: 3}
       propertyPath: m_SizeDelta.y

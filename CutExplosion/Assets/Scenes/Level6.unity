@@ -1704,9 +1704,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 7158835230202015308, guid: 75973afb983281e418956f4a323be499, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d9f7a869890dc344b9f4f34151d61528, type: 3}
     - target: {fileID: 7158835230202015309, guid: 75973afb983281e418956f4a323be499, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7158835230202015310, guid: 75973afb983281e418956f4a323be499, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 38.8323
+      objectReference: {fileID: 0}
+    - target: {fileID: 7158835230202015310, guid: 75973afb983281e418956f4a323be499, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 124.85011
       objectReference: {fileID: 0}
     - target: {fileID: 8685246847068630317, guid: 75973afb983281e418956f4a323be499, type: 3}
       propertyPath: i
