@@ -13,7 +13,7 @@ public class Cutscene : MonoBehaviour
 
     IEnumerator RotinaCutscene()
     {
-        yield  return new WaitForSeconds(40f);
+        yield  return new WaitForSeconds(57.5f);
         SceneManager.LoadScene(1);
     }
     public void PassCutscene()

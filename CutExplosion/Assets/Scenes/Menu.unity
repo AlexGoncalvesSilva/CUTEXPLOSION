@@ -882,6 +882,67 @@ Transform:
   m_Father: {fileID: 507864563}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &404808170
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3338148952309275369, guid: 75973afb983281e418956f4a323be499, type: 3}
+      propertyPath: m_Name
+      value: BasicCore
+      objectReference: {fileID: 0}
+    - target: {fileID: 3338148952309275369, guid: 75973afb983281e418956f4a323be499, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582338533417297032, guid: 75973afb983281e418956f4a323be499, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582338533417297032, guid: 75973afb983281e418956f4a323be499, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.0202937
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582338533417297032, guid: 75973afb983281e418956f4a323be499, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.10599081
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582338533417297032, guid: 75973afb983281e418956f4a323be499, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.976834
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582338533417297032, guid: 75973afb983281e418956f4a323be499, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582338533417297032, guid: 75973afb983281e418956f4a323be499, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582338533417297032, guid: 75973afb983281e418956f4a323be499, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582338533417297032, guid: 75973afb983281e418956f4a323be499, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582338533417297032, guid: 75973afb983281e418956f4a323be499, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582338533417297032, guid: 75973afb983281e418956f4a323be499, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582338533417297032, guid: 75973afb983281e418956f4a323be499, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 75973afb983281e418956f4a323be499, type: 3}
 --- !u!1 &507864562
 GameObject:
   m_ObjectHideFlags: 0
@@ -2387,7 +2448,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1145639583}
+        m_TargetAssemblyTypeName: VolumeSound, Assembly-CSharp
+        m_MethodName: UpdateSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &995646821
 GameObject:
   m_ObjectHideFlags: 0

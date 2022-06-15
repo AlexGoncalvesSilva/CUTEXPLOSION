@@ -13,7 +13,7 @@ public class VolumeSound : MonoBehaviour
     public float BackGroundFloat, SoundEffectsFloat;
     public Slider BackGroundSlider, SoundEffectsSlider;
     private AudioSource BackGroundAudio;
-    //public AudioSource[] SoundEffectsAudio;
+    private AudioSource SoundEffectsAudio;
 
     public static VolumeSound instance;
 
